@@ -24,7 +24,7 @@ jobs:
         
       - name: Pull data and model
         env:
-          GDRIVE_CREDENTIALS_DATA : /home/sunt/.cache/pydrive2fs/710796635688-iivsgbgsb6uv1fap6635dhvuei09o66c.apps.googleusercontent.com/default.json 
+          GDRIVE_CREDENTIALS_DATA : {"access_token": "ya29.a0AWY7CknokeBG62tq2ZFEyZ4uuNSkGgNxs-HLm9YLmMarMiCKr2_6KObzii7PVSN3KGCzwDH1Ua9GVEYYss6A77CsyotvMkHsDqxtEjJE1Sg-sWtl7C14gExpJRQIOm7vXzahdN4x0jOGlNR8kDduNxq6TFiFbS7VaCgYKAUQSARASFQG1tDrph5Cvnn-6b6XR9S0wQpt-vA0167", "client_id": "710796635688-iivsgbgsb6uv1fap6635dhvuei09o66c.apps.googleusercontent.com", "client_secret": "a1Fz59uTpVNeG_VGuSKDLJXv", "refresh_token": "1//0erwUIlYdHxxyCgYIARAAGA4SNwF-L9Ir3hDPWeFFw0sQzio1W-cgBEc9oi90cU5huXrQmyVaXtHLvwe92SZaBWK4VQdE7Jp1QAI", "token_expiry": "2023-04-30T02:19:06Z", "token_uri": "https://oauth2.googleapis.com/token", "user_agent": null, "revoke_uri": "https://oauth2.googleapis.com/revoke", "id_token": null, "id_token_jwt": null, "token_response": {"access_token": "ya29.a0AWY7CknokeBG62tq2ZFEyZ4uuNSkGgNxs-HLm9YLmMarMiCKr2_6KObzii7PVSN3KGCzwDH1Ua9GVEYYss6A77CsyotvMkHsDqxtEjJE1Sg-sWtl7C14gExpJRQIOm7vXzahdN4x0jOGlNR8kDduNxq6TFiFbS7VaCgYKAUQSARASFQG1tDrph5Cvnn-6b6XR9S0wQpt-vA0167", "expires_in": 3599, "scope": "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.appdata", "token_type": "Bearer"}, "scopes": ["https://www.googleapis.com/auth/drive.appdata", "https://www.googleapis.com/auth/drive"], "token_info_uri": "https://oauth2.googleapis.com/tokeninfo", "invalid": false, "_class": "OAuth2Credentials", "_module": "oauth2client.client"}
           # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         #   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: dvc pull
