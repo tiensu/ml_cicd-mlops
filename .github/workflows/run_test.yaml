@@ -40,7 +40,7 @@ jobs:
     
       - name: Create CML report
         env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_TOKEN: ${{ secrets.token }}
         run: |
           # Add the metrics to the report
           dvc metrics show --show-md >> report.md
