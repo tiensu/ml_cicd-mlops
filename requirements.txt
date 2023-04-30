@@ -8,6 +8,7 @@ aiobotocore[boto3]==2.5.0
     # via
     #   dvc-s3
     #   s3fs
+dvc-gdrive
 aiohttp==3.8.4
     # via
     #   aiobotocore
