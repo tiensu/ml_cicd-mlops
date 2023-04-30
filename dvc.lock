@@ -33,6 +33,7 @@ stages:
     - path: src/train.py
       md5: 4894d7536ca0f4a1a449ff44fd228adf
       size: 1658
+      isexec: true
     params:
       params.yaml:
         data:
