@@ -50,6 +50,7 @@ stages:
             - 10
             - 100
             svm__gamma:
+            - 0.01
             - 0.1
             - 1
             - 10
@@ -59,11 +60,11 @@ stages:
             verbose: 3
     outs:
     - path: model/svm
-      md5: 153c61a746128716d30861984b91d94a
+      md5: ad595d03adca37a132d137d132744ac1
       size: 148163
       isexec: true
     - path: model/svm.mlem
-      md5: b9976a485a05f97fca36c2c428f2fd2d
+      md5: 2ed71c21e596605c7a7fa2a9f101de32
       size: 1263
       isexec: true
   evaluate:
@@ -74,11 +75,12 @@ stages:
       size: 194723
       nfiles: 4
     - path: model/svm
-      md5: 153c61a746128716d30861984b91d94a
+      md5: ad595d03adca37a132d137d132744ac1
       size: 148163
     - path: src/evaluate.py
       md5: 912aac9c6e00b70858f1d47bd16e51a0
       size: 803
+      isexec: true
     params:
       params.yaml:
         data:
@@ -89,3 +91,4 @@ stages:
     - path: dvclive/metrics.json
       md5: d71ae0196bba8e553dbad618e306517b
       size: 28
+      isexec: true
