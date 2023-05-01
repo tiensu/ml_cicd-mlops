@@ -4,9 +4,9 @@ stages:
     cmd: python src/process_data.py
     deps:
     - path: data/raw
-      md5: 84a0e37242f885ea418b9953761d35de.dir
-      size: 84199
-      nfiles: 2
+      md5: 8c4ae7c2f53adc246c2d64dc8e264738.dir
+      size: 100951
+      nfiles: 1
     - path: src/process_data.py
       md5: 996ccb3e0f024a915417f77a58ad9cde
       size: 1237
@@ -20,19 +20,20 @@ stages:
           test_size: 0.2
     outs:
     - path: data/intermediate
-      md5: 3377ebd11434a04b64fe3ca5cb3cc455.dir
-      size: 194875
+      md5: a9ef88a66f785d4bbf81b9e35ecb554f.dir
+      size: 194723
       nfiles: 4
   train:
     cmd: python src/train.py
     deps:
     - path: data/intermediate
-      md5: 3377ebd11434a04b64fe3ca5cb3cc455.dir
-      size: 194875
+      md5: a9ef88a66f785d4bbf81b9e35ecb554f.dir
+      size: 194723
       nfiles: 4
     - path: src/train.py
       md5: 4894d7536ca0f4a1a449ff44fd228adf
       size: 1658
+      isexec: true
     params:
       params.yaml:
         data:
@@ -47,6 +48,7 @@ stages:
             - 0.1
             - 1
             - 10
+            - 100
             svm__gamma:
             - 0.1
             - 1
@@ -57,20 +59,22 @@ stages:
             verbose: 3
     outs:
     - path: model/svm
-      md5: ba0c50b412f6b5d5c5bd6c0ef163b1a1
+      md5: 153c61a746128716d30861984b91d94a
       size: 148163
+      isexec: true
     - path: model/svm.mlem
-      md5: 3e7f2947de87d4500fb0dff8c1311555
+      md5: b9976a485a05f97fca36c2c428f2fd2d
       size: 1263
+      isexec: true
   evaluate:
     cmd: python src/evaluate.py
     deps:
     - path: data/intermediate
-      md5: 3377ebd11434a04b64fe3ca5cb3cc455.dir
-      size: 194875
+      md5: a9ef88a66f785d4bbf81b9e35ecb554f.dir
+      size: 194723
       nfiles: 4
     - path: model/svm
-      md5: ba0c50b412f6b5d5c5bd6c0ef163b1a1
+      md5: 153c61a746128716d30861984b91d94a
       size: 148163
     - path: src/evaluate.py
       md5: 912aac9c6e00b70858f1d47bd16e51a0

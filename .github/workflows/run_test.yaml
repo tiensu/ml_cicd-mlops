@@ -24,9 +24,10 @@ jobs:
         
       - name: Pull data and model
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: dvc pull -r read-write
+          GDRIVE_CREDENTIALS_DATA : ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+          # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        #   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: dvc pull
 
       - name: Run tests
         run: pytest 
@@ -39,7 +40,7 @@ jobs:
     
       - name: Create CML report
         env:
-          REPO_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+          REPO_TOKEN: ${{ secrets.SECRET_GITHUB_TOKEN }}
         run: |
           # Add the metrics to the report
           dvc metrics show --show-md >> report.md
